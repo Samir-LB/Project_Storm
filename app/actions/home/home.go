@@ -14,5 +14,13 @@ var (
 )
 
 func Index(c buffalo.Context) error {
+	userName := "Hola"
+	c.Set("hola", userName)
 	return c.Render(http.StatusOK, r.HTML("home/index.plush.html"))
+}
+
+func VerifyUser(c buffalo.Context) error {
+	userName := c.Value("Username")
+	c.Set("hola", userName)
+	return c.Redirect(http.StatusOK, "dashboard/dashboard.plush.html")
 }

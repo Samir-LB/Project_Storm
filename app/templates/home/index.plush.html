@@ -1,9 +1,23 @@
-<div class="py-4 text-center welcome">
-    <h1 class="font-bold mb-3">Welcome to your Buffalo App!</h1>
-    <img src="/assets/images/buffalo.svg" alt="buffalo-logo">
-    <p>
-        This is the landing page for your app, the content of this page is at <code>app/templates/home/index.html.plush</code>.
-        Refresh takes care of refreshing changes you do to your code and refresh the binary. If you want to stop the application you can hit <code>Ctrl+C</code> 
-        on the same terminal where you ran <code>ox dev</code>.
-    </p>
-</div>
+<%= form({action: sendCrendentialsPath(), method: "POST"}) { %>
+    <%= if (hola == "Hola") { %>
+    <% } %>
+
+    <% let user = hola + "soy user" %>
+    <h2> <%= user %> </h2> 
+
+    <h2 class="card-header text-center"><img src="https://aulavirtual.itsa.edu.co/pluginfile.php/1/core_admin/logo/0x200/1675367088/logo_IUB.png" class="img-fluid" title="Aula Virtual Unibarranquilla" alt="Aula Virtual Unibarranquilla"></h2>
+    <h1>Inicia Sesion</h1>
+    <div class="contenedor">
+        <div class="input-contenedor">
+            <i class="bi bi-file-person-fill"></i>
+            <input type="text" placeholder="Usuario">
+        </div>
+
+        <div class="input-contenedor">
+            <i class="bi bi-key-fill"></i>
+            <input type="password" placeholder="Contraseña">
+        </div>
+        <input type="submit" name="UserName" value="Inicia Sesion" class="button">
+        <p><a class="link" href="forgotpassword.html">¿Olvidó su nombre de usuario o contraseña?</a></p>
+    </div>
+<% } %>

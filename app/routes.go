@@ -18,5 +18,6 @@ func setRoutes(root *buffalo.App) {
 	root.Use(middleware.CSRF)
 
 	root.GET("/", home.Index)
+	root.POST("/send-crendetials", home.VerifyUser).Name("sendCrendentials")
 	root.ServeFiles("/", http.FS(public.FS()))
 }
