@@ -3,9 +3,9 @@ package app
 import (
 	"net/http"
 
-	"Project_Storm/public"
 	"Project_Storm/app/actions/home"
 	"Project_Storm/app/middleware"
+	"Project_Storm/public"
 
 	"github.com/gobuffalo/buffalo"
 )
