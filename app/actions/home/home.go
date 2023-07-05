@@ -1,10 +1,12 @@
 package home
 
 import (
+	"Project_Storm/app/models"
 	"Project_Storm/app/render"
 	"net/http"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/pop/v5"
 )
 
 var (
@@ -20,7 +22,23 @@ func Index(c buffalo.Context) error {
 }
 
 func VerifyUser(c buffalo.Context) error {
-	userName := c.Value("Username")
-	c.Set("hola", userName)
-	return c.Redirect(http.StatusOK, "dashboard/dashboard.plush.html")
+	egresado := &models.Egresado{}
+	if err := c.Bind(egresado); err != nil {
+		return err
+	}
+
+	// Realizar validación de existencia del usuario
+	tx := c.Value("tx").(*pop.Connection)
+	exists, err := tx.Where("correo = ?", egresado.Correo).Where("clave = ?", egresado.Clave).Exists(egresado)
+	if err != nil {
+		return err
+	}
+	if exists {
+		// El usuario ya existe, redirigir al home
+		return c.Redirect(302, "/")
+	}
+
+	// mosstrar error
+	c.Set("error", "El usuario ya existe.")
+	return c.Render(400, r.HTML("home/index.plush.html"))
 }
