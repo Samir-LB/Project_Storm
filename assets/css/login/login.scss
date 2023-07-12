@@ -1,0 +1,71 @@
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.contenedor{
+	width:100%;
+	padding: 15px;
+}
+.formulario{
+	background: #fff;
+	margin-top: 100px;	
+	background-clip: border-box;
+	border: 1px solid rgba(0,0,0,.125);
+}
+h1{
+	text-align: center;
+	color: #1a2537;
+	font-size: 40px;
+}
+input[type="text"],
+input[type="password"]{
+	font-size: 20px;
+	width: 82%;
+	padding: 10px;
+	border: none;
+}
+.input-contenedor{
+	margin-bottom: 15px;
+	border: 1px solid #aaa;
+}
+i{
+	min-width: 50px;
+	text-align: center;
+	color: #999;
+	padding: 5px;
+}
+.button{
+	border: none;
+	width: 100;
+	color: white;
+	font-size: 20px;
+	background: #1a2537;
+	padding: 15px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.button:hover{
+	background: cadetblue;
+}
+p{
+	text-align: center;
+}
+.link{
+	text-decoration: none;
+	color: #1a2537;
+	font-weight: 600;
+}
+.link:hover{
+	color: cadetblue;
+}
+@media(min-width:768px){
+	.formulario{
+		margin: auto;
+		width: 500px;
+		margin-top: 150px;
+
+	}
+}

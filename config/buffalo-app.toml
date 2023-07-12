@@ -1,0 +1,13 @@
+name = "Project_Storm"
+bin = "bin\\Project_Storm"
+vcs = "git"
+with_pop = true
+with_sqlite = false
+with_dep = false
+with_webpack = true
+with_nodejs = true
+with_yarn = true
+with_docker = true
+with_grifts = true
+as_web = true
+as_api = false

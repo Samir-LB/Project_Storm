@@ -10,16 +10,16 @@ const configurator = {
   entries: function(){
     var entries = {
       application: [
-        './app/assets/css/application.scss',
+        './assets/css/application.scss',
       ],
     }
 
-    Glob.sync("./app/assets/*/*.*").forEach((entry) => {
-      if (entry === './app/assets/css/application.scss') {
+    Glob.sync("./assets/*/*.*").forEach((entry) => {
+      if (entry === './assets/css/application.scss') {
         return
       }
 
-      let key = entry.replace(/(\.\/app\/assets\/(src|js|css|go)\/)|\.(ts|js|s[ac]ss|go)/g, '')
+      let key = entry.replace(/(\.\/assets\/(src|js|css|go)\/)|\.(ts|js|s[ac]ss|go)/g, '')
       if(key.startsWith("_") || (/(ts|js|s[ac]ss|go)$/i).test(entry) == false) {
         return
       }
@@ -36,16 +36,19 @@ const configurator = {
 
   plugins() {
     var plugins = [
-      new Webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery"}),
+      new Webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+      }),
       new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
       new CopyWebpackPlugin({
         patterns: [{
-          from: "./app/assets",
+          from: "./assets",
           globOptions: {
             ignore: [
-              "**/css/**", 
-              "**/js/**", 
-              "**/src/**",
+              "**/assets/css/**",
+              "**/assets/js/**",
+              "**/assets/src/**",
             ]
           }
         }],
@@ -88,7 +91,7 @@ const configurator = {
       mode: env,
       entry: configurator.entries(),
       output: {
-        filename: "[name].[contenthash].js", 
+        filename: "[name].[contenthash].js",
         path: `${__dirname}/public/assets`,
         clean: true,
       },
