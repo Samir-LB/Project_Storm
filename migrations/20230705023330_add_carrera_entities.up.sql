@@ -1,6 +1,6 @@
-CREATE TABLE carrera (
-  id UUID PRIMARY KEY,
-  nombre VARCHAR(255),
-  tipo VARCHAR(255),
-  activa BOOLEAN
+CREATE TABLE careers (
+  id UUID PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  active BOOLEAN DEFAULT FALSE
 );

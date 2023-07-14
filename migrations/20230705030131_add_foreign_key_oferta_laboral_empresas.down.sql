@@ -1,5 +1,5 @@
-ALTER TABLE oferta_laboral
-DROP COLUMN empresa_id;
+ALTER TABLE work_offers
+DROP COLUMN company_id;
 
-ALTER TABLE oferta_laboral
-DROP CONSTRAINT fk_oferta_laboral_empresa;
+-- ALTER TABLE work_offers
+-- DROP CONSTRAINT fk_oferta_laboral_empresa;

@@ -1,7 +1,9 @@
-CREATE TABLE oferta_laboral (
-  id UUID PRIMARY KEY,
-  nombre VARCHAR(255),
-  descripcion TEXT,
-  direccion VARCHAR(255),
-  contrato VARCHAR(255)
+CREATE TABLE work_offers (
+    id UUID PRIMARY KEY NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    contract VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
 );

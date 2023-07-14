@@ -1,1 +1,1 @@
-DROP TABLE profesor;
+DROP TABLE teachers;

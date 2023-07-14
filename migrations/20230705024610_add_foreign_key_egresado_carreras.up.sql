@@ -1,7 +1,7 @@
 -- Agregar columna carrera_id en la tabla egresado
-ALTER TABLE egresado ADD carrera_id UUID;
+ALTER TABLE students ADD career_id UUID;
 
 -- Establecer la relación entre las tablas
-ALTER TABLE egresado
-ADD CONSTRAINT fk_egresado_carrera
-FOREIGN KEY (carrera_id) REFERENCES carrera(id);
+ALTER TABLE students
+ADD CONSTRAINT fk_students_career
+FOREIGN KEY (career_id) REFERENCES careers(id);

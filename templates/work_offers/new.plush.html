@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="my-5">Nueva oferta laboral</h1>
+
+    <%= form_for(workOffer, {action: adminWorkOffersPath(), method: "POST", class: "bg-white text-black p-5 mx-5 rounded d-flex flex-column gap-4"}) { %>
+    <input type="hidden" name="CompanyID" value="<%= workOffer.CompanyID %>">
+
+    <div class="form-group">
+        <%= f.InputTag("Name", {class: "form-control border w-100 text-sm", placeholder: "Título de la oferta", required: true}) %>
+    </div>
+
+    <div class="form-group">
+        <%= f.TextAreaTag("Description", {class: "form-control border w-100 text-sm", rows: 3, placeholder: "Descripción de la oferta", required: true}) %>
+    </div>
+
+    <div class="form-group">
+        <%= f.InputTag("Address", {class: "form-control border w-100 text-sm", placeholder: "Dirección de la oferta", required: true}) %>
+    </div>
+
+    <div class="form-group">
+        <label for="contract_type">Tipo de contrato</label>
+        <select class="form-select mt-2" id="contract_type" name="Contract" required>
+            <option value="full_time">Tiempo completo</option>
+            <option value="part_time">Medio tiempo</option>
+            <option value="freelance">Freelance</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear oferta</button>
+    <% } %>
+</div>

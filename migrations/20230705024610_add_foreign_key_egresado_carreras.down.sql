@@ -1,3 +1,3 @@
-ALTER TABLE egresado
+ALTER TABLE students
 DROP CONSTRAINT fk_egresado_carrera,
-DROP COLUMN carrera_id;
+DROP COLUMN career_id;

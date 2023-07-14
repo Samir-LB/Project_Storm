@@ -1,1 +1,1 @@
-DROP TABLE egresado;
+DROP TABLE students;

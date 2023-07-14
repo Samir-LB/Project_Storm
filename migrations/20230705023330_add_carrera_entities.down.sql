@@ -1,1 +1,1 @@
-DROP TABLE carrera;
+DROP TABLE careers;

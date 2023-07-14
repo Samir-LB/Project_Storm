@@ -1,11 +1,6 @@
 ---
 development:
-  dialect: postgres
-  database: project_storm_development
-  user: postgres
-  password: 123
-  host: 127.0.0.1
-  pool: 5
+  url: {{envOr "DATABASE_DEV" "postgres://postgres:123@127.0.0.1:5432/project_storm_development?sslmode=disable"}}
 
 test:
   url: {{envOr "TEST_DATABASE_URL" "postgres://postgres:123@127.0.0.1:5432/project_storm_test?sslmode=disable"}}

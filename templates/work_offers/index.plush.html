@@ -1,0 +1,47 @@
+<div class="my-5 w-100 px-5 d-flex flex-column">
+    <h1>Ofertas laborales</h1>
+
+    <div class="d-flex justify-content-center flex-wrap overflow-y-auto gap-5 mt-5">
+        <%= if (len(workOffers) == 0) { %>
+            <div class="d-flex justify-content-center w-100">
+                <p class="text-white">No hay ofertas laborales</p>
+            </div>
+        <% } else { %>
+            <%= for (workOffer) in workOffers { %>
+            <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+                <div class="card text-dark card-has-bg click-col"
+                     style="background-image: url('https://source.unsplash.com/600x900/?computer,design');">
+                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design"
+                         alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?" />
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <small class="card-meta mb-2"><%= workOffer.Name %></small>
+                                <div class="ms-auto">
+                                    <a href="<%= editAdminWorkOfferPath({ id: workOffer.ID }) %>" class="btn btn-sm btn-outline-secondary">Editar</a>
+                                    <a href="<%= adminWorkOfferPath({ id: workOffer.ID }) %>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                </div>
+                            </div>
+                            <h4 class="card-title mt-0">
+                                <a class="text-dark" href="https://creativemanner.com"><%= workOffer.Name %></a>
+                            </h4>
+                            <small><i class="far fa-clock"></i> October 15, 2020</small>
+                        </div>
+                        <div class="card-footer">
+                            <div class="media">
+                                <img class="mr-3 rounded-circle"
+                                     src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                     alt="Generic placeholder image" style="max-width: 50px" />
+                                <div class="media-body">
+                                    <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                    <small>Director of UI/UX</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        <% } %>
+    </div>
+ </div>

@@ -1,7 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
-@import "buffalo";
+@import "base/_variables.scss";
+@import "base/_base.scss";
+@import "base/_navbar.scss";
+@import "base/_sidebar.scss";
 
 @import "login/login.scss";
 @import "admin/admin.scss";

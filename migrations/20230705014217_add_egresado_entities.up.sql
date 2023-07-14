@@ -1,9 +1,9 @@
-CREATE TABLE egresado (
+CREATE TABLE students (
   id UUID PRIMARY KEY,
-  nombre VARCHAR(255),
-  telefono VARCHAR(255),
-  direccion VARCHAR(255),
-  contrato VARCHAR(255),
-  correo VARCHAR(255),
-  clave VARCHAR(255)
+  name VARCHAR(255),
+  phone VARCHAR(255),
+  address VARCHAR(255),
+  contract VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255)
 );

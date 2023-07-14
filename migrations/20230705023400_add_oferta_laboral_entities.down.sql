@@ -1,1 +1,1 @@
-DROP TABLE oferta_laboral;
+DROP TABLE work_offers;

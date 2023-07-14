@@ -1,8 +1,8 @@
-CREATE TABLE profesor (
+CREATE TABLE teachers (
   id UUID PRIMARY KEY,
-  nombre VARCHAR(255),
-  telefono VARCHAR(255),
-  correo VARCHAR(255),
-  clave VARCHAR(255),
-  horario VARCHAR(255)
+  name VARCHAR(255),
+  phone VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  schedule VARCHAR(255)
 );

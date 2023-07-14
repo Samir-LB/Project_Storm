@@ -1,9 +1,9 @@
-CREATE TABLE empresa (
-  id UUID PRIMARY KEY,
-  nombre VARCHAR(255),
-  correo VARCHAR(255),
-  telefono VARCHAR(255),
-  direccion VARCHAR(255),
-  nit VARCHAR(255),
-  area VARCHAR(255)
+CREATE TABLE companies (
+  id UUID PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  nit VARCHAR(255) NOT NULL,
+  area VARCHAR(255) NOT NULL
 );

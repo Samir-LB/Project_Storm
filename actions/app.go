@@ -4,9 +4,6 @@ import (
 	"net/http"
 	"sync"
 
-	"project_storm/actions/admin"
-	"project_storm/actions/login"
-	"project_storm/locales"
 	"project_storm/models"
 	"project_storm/public"
 
@@ -54,29 +51,13 @@ func App() *buffalo.App {
 		app.Use(paramlogger.ParameterLogger)
 		app.Use(csrf.New)
 		app.Use(popmw.Transaction(models.DB))
-		app.Use(translations())
 
-		app.GET("/", login.Index)
-		app.POST("/send-crendetials", login.VerifyUser).Name("sendCrendentials")
+		SetRoutes(app)
 
-		adminGroup := app.Group("/admin")
-		adminGroup.GET("/home", admin.Home)
 		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory
 	})
 
 	return app
-}
-
-// translations will load locale files, set up the translator `actions.T`,
-// and will return a middleware to use to load the correct locale for each
-// request.
-// for more information: https://gobuffalo.io/en/docs/localization
-func translations() buffalo.MiddlewareFunc {
-	var err error
-	if T, err = i18n.New(locales.FS(), "en-US"); err != nil {
-		app.Stop(err)
-	}
-	return T.Middleware()
 }
 
 // forceSSL will return a middleware that will redirect an incoming request

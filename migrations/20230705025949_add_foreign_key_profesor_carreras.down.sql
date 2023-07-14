@@ -1,5 +1,5 @@
-ALTER TABLE profesor
-DROP COLUMN carrera_id;
+ALTER TABLE teachers
+DROP COLUMN career_id;
 
-ALTER TABLE profesor
-DROP CONSTRAINT fk_profesor_carrera;
+ALTER TABLE teachers
+DROP CONSTRAINT fk_teacher_career

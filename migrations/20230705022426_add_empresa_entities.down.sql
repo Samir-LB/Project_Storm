@@ -1,1 +1,1 @@
-DROP TABLE empresa;
+DROP TABLE companies;
