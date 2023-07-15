@@ -2,12 +2,13 @@ package work_offers
 
 import (
 	"fmt"
-	"github.com/gobuffalo/buffalo/render"
-	"github.com/gofrs/uuid"
 	"net/http"
 	"project_storm/models"
 	"project_storm/public"
 	"project_storm/templates"
+
+	"github.com/gobuffalo/buffalo/render"
+	"github.com/gofrs/uuid"
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop/v6"
